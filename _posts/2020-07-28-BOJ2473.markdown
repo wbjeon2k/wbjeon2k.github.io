@@ -1,0 +1,222 @@
+---
+title: "BOJ 2473"
+categories: ps BOJ
+layout: article
+tags: binary-search two-pointer
+date: 2020-07-28 23:50 +0900
+---
+
+## 백준 2473, Binary Search, Two Pointer Method 
+
+첫 번째는 정렬 후 이분탐색, 두 번째는 two pointer method 로 해결.
+
+1. 정렬 후 이분탐색 $O(N^2logN)$
+    - 모든 용액들을 오름차순 정렬.
+    - 서로 다른 두 용액 A+B 의 조합을 찾는다.
+    - 각 조합에 대해서 [lower_bound()][lb-link] 를 통해 용액들 중 -(A+B) 와 제일 가까운 값을 찾는다.  
+&nbsp;   
+2. Two Pointer Method $O(N^2)$
+    - Two Pointer Method 에 대한 자세한 해설은 [kks227][kks227-link] 님의 설명 참조.
+    - 모든 용액들을 오름차순 정렬.
+    - i 번째 용액에 대해서 최소 범위 lo = i + 1, 최대 범위 hi = N - 1 설정.
+    - val[i] + val[lo] + val[hi] > 0 일때 -&nbsp;-hi.  
+      val[hi] 값을 줄여서 용액의 합을 0에 가깝게 줄인다.
+    - val[i] + val[lo] + val[hi] < 0 일때 + +lo.  
+      val[lo] 값을 늘려서 용액의 합을 0에 가깝게 늘린다.
+
+[kks227-link]: https://blog.naver.com/kks227/220795165570
+[lb-link]: http://www.cplusplus.com/reference/algorithm/lower_bound/
+
+## Source Code
+
+[백준 2473](http://icpc.me/2473) 
+
+- 1st approach (binary search)
+
+```cpp
+//BOJ2473
+#define _CRT_SECURE_NO_WARNINGS
+#include <bits/stdc++.h>
+using namespace std;
+
+#define ll long long
+#define pii pair<int,int>
+#define llpii pair<ll, pii>
+
+vector<ll> val; // 용액 가중치 저장
+int N;
+ll maxdiff = LLONG_MAX; // 세 용액 합의 최댓값.
+ll ans[3] = { 0,0,0 };
+
+void find() {
+	sort(val.begin(), val.end());
+
+	for (int i = 0; i < val.size(); ++i) {
+		for (int j = 0; j < val.size(); ++j) {
+			if (i != j) { // 서로 다른 원소
+				ll chk = -(val[i] + val[j]);
+				// lower_bound 를 통해 가장 크기가 비슷한 원소 찾기.
+				auto iter = lower_bound(val.begin(), val.end(), chk); 
+				if (iter == val.end()) {
+					--iter;
+				}
+				int idx = iter - val.begin();
+				if (idx == i || idx == j) continue; // 같은 원소 중복 방지
+
+				if (abs(val[idx] - chk) < maxdiff) {
+					// 만약 지금까지 찾은 용액의 합 보다 더 작은 값을 찾았다면 maxdiff 과 정답 갱신.
+					maxdiff = abs(val[idx] - chk);
+					ans[0] = *iter;
+					ans[1] = val[i];
+					ans[2] = val[j];
+				}
+
+				// lower_bound 로 찾은 iter 에서 답을 찾는다는 보장이 없으므로
+				// iter +- 1 범위 내에서 답을 찾는다.
+
+				if (idx -1 != i && idx-1 != j) { 
+					if (idx > 0 && abs(val[idx - 1] - chk) < maxdiff) {
+						maxdiff = abs(val[idx - 1] - chk);
+						ans[0] = val[idx - 1];
+						ans[1] = val[i];
+						ans[2] = val[j];
+					}
+				}
+
+				if (idx + 1 != i && idx + 1 != j) {
+					if (idx < (val.size() - 1) && abs(val[idx + 1] - chk) < maxdiff) {
+						maxdiff = abs(val[idx + 1] - chk);
+						ans[0] = val[idx + 1];
+						ans[1] = val[i];
+						ans[2] = val[j];
+					}
+				}
+			}
+		}
+	}
+
+	return;
+}
+
+int main() {
+	ios::sync_with_stdio(false);
+	cin.tie(NULL);
+
+	cin >> N;
+	for (int i = 0; i < N; ++i) {
+		ll a;
+		cin >> a;
+		val.push_back(a);
+	}
+
+	find();
+
+	ll a, b, c;
+	a = min({ ans[0], ans[1], ans[2] });
+	c = max({ ans[0], ans[1], ans[2] });
+	b = ans[0] + ans[1] + ans[2] - a - c;
+
+	printf("%lld %lld %lld\n", a, b, c);
+
+	return 0;
+
+}
+```
+
+- 2nd approach (two pointer method)
+
+```cpp
+//BOJ2473
+#define _CRT_SECURE_NO_WARNINGS
+#include <bits/stdc++.h>
+using namespace std;
+
+#define ll long long
+#define pii pair<int,int>
+#define llpii pair<ll, pii>
+
+vector<ll> val;
+int N;
+ll maxdiff = LLONG_MAX;
+ll ans[3] = { 0,0,0 };
+
+void find() {
+	for (int i = 0; i < N - 2; ++i) {
+		int lo, hi;
+		// 탐색 범위의 최솟값 val[lo], 최댓값 val[hi]
+		lo = i + 1;
+		hi = N - 1;
+		while (lo < hi) {
+			ll a, b, diff;
+			a = val[lo];
+			b = val[hi];
+			diff = abs(val[i] + a + b);
+			// 세 용액의 합이 더 작을 경우 정답 갱신
+			if (diff < maxdiff) {
+				maxdiff = diff;
+				ans[0] = val[i];
+				ans[1] = a;
+				ans[2] = b;
+
+				if (diff == 0) {
+					return;
+				}
+			}
+
+			if (val[i] + a + b > 0) {
+				// 0 에 가깝게 세 용액의 합을 줄인다.
+				--hi;
+			}
+			else ++lo; // 0 에 가깝게 세 용액의 합을 늘린다.
+		}
+	}
+}
+
+int main() {
+	ios::sync_with_stdio(false);
+	cin.tie(NULL);
+
+	cin >> N;
+	for (int i = 0; i < N; ++i) {
+		ll a;
+		cin >> a;
+		val.push_back(a);
+	}
+
+	sort(val.begin(),val.end());
+
+	find();
+
+	printf("%lld %lld %lld\n", ans[0], ans[1], ans[2]);
+
+	return 0;
+}
+```
+
+
+<!---
+You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+
+Jekyll requires blog post files to be named according to the following format:
+
+`YEAR-MONTH-DAY-title.MARKUP`
+
+Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit numbers, and `MARKUP` is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+
+Jekyll also offers powerful support for code snippets:
+
+{% highlight ruby %}
+def print_hi(name)
+  puts "Hi, #{name}"
+end
+print_hi('Tom')
+#=> prints 'Hi, Tom' to STDOUT.
+{% endhighlight %}
+
+Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+
+[jekyll-docs]: https://jekyllrb.com/docs/home
+[jekyll-gh]:   https://github.com/jekyll/jekyll
+[jekyll-talk]: https://talk.jekyllrb.com/
+
+--->
