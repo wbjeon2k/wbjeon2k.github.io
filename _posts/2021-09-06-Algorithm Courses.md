@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 categories: ps
 date: 2021-09-06 01:00 +0900
 title: "MIT OCW 알고리즘 강의 추천"

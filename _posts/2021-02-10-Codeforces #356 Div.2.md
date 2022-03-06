@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 categories: ps Codeforces
 tags: greedy implementation
 date: 2021-02-10 20:00 +0900
