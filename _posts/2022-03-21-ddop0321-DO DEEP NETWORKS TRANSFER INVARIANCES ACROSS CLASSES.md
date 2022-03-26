@@ -43,10 +43,10 @@ $T(\cdot | x) $ : nuisance transformation distribution.
 nuisance transformation : location, scale, aspect ratio, ... etc.  
 - Definition of a "good" classifier?  
 invariant to $T(\cdot | x)$,  
-i.e. $\hat{P}_{w}(y = j | x) = \hat{P}_{w}(y = j | x')$ when $x' = T(x)$, transformed $x$.  
+i.e. $\hat{P}_{w}(y = j | x) = \hat{P}_{w}(y = j | x^{trans})$ when $x^{trans} = T(x)$, transformed $x$.  
 i.e. same label prediction for both original input $x$, transformed $T(x)$  
 - Invariance metric : eKLD (estimated KL Divergence)  
-![img1](../images/ddop0321/eKLD.png)  
+![img1](/images/ddop0321/eKLD.png)  
   
 Equal with $\sum_{x \in P_{train}} \hat{P}_{w}( \cdot | x) \log \frac{\hat{P}_{w}( \cdot | x)}{\hat{P}_{w}( \cdot | T(x))}$  
 - average KL Divergence, relative entrophy, statistcal distance,  
@@ -62,7 +62,7 @@ Objective : transfer invariance across classes by explicitly learning underlying
 &rarr; assume T_mock is same as orignial T  
 - based on multimodal image-to-image translation
 - Algorithm
-![img2](../images/ddop0321/geninvar.png)  
+![img2](/images/ddop0321/geninvar.png)  
 ```
 sample batch, either random or relative to sample sizes per class
 
