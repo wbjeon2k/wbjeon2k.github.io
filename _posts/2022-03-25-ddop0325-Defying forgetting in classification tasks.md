@@ -63,8 +63,6 @@ Alternatively, the architecture remains static, with fixed parts allocated to ea
 - 다른 분야와의 비교
 ![comparison](/images/ddop0325/diagrams.png)  
 
-
-
 # Notable References
 
 # Thoughts

@@ -46,10 +46,10 @@ invariant to $T(\cdot | x)$,
 i.e. $\hat{P}_{w}(y = j | x) = \hat{P}_{w}(y = j | x^{trans})$ when $x^{trans} = T(x)$, transformed $x$.  
 i.e. same label prediction for both original input $x$, transformed $T(x)$  
 - Invariance metric : eKLD (estimated KL Divergence)  
-![img1](/images/ddop0321/eKLD.png)  
-  
-Equal with $\sum_{x \in P_{train}} \hat{P}_{w}( \cdot | x) \log \frac{\hat{P}_{w}( \cdot | x)}{\hat{P}_{w}( \cdot | T(x))}$  
-- average KL Divergence, relative entrophy, statistcal distance,  
+  ![img1](/images/ddop0321/eKLD.png)  
+  Equal with $\sum_{x \in P_{train}} \hat{P}_{w}( \cdot | x) \log \frac{\hat{P}_{w}( \cdot | x)}{\hat{P}_{w}( \cdot | T(x))}$  
+
+- average KL Divergence, relative entrophy, statistcal distance  
 i.e. avg diff of encoding bits  
 - $T a-priori$ unknown (당연! 알면 이걸 왜...)  
 따라서 rotation 같은 방법 사용, $T = {T_{rotation}, T_{erosion}, \cdots}$  
@@ -63,7 +63,8 @@ Objective : transfer invariance across classes by explicitly learning underlying
 - based on multimodal image-to-image translation
 - Algorithm
 ![img2](/images/ddop0321/geninvar.png)  
-```
+
+```python
 sample batch, either random or relative to sample sizes per class
 
 if class_size(y_i) <= threshold
@@ -72,7 +73,8 @@ then:
     replace with (T(x), y) --> 'generative'
 
 update model based on new batch
-```
+```  
+
 - remaining questions from authors:  
 why do deep neural nets struggle with class-agnostic invariance transfer in the first place?  
 
