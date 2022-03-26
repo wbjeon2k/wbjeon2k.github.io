@@ -37,17 +37,18 @@ learned from large (in terms of sample size) classes to small classes?
 - Claim : generative approach suggested (Generative Invariance Transfer) helps,  
 however invariance transfer is still poor, even applying balancing techniques.  
 - Set of notations:  
-input as $(x,y)$, $y \in {1, \cdots C}$, weight $w$  
+input as $(x,y)$, $y \in {1, \cdots C}$, weight $w$   
 model $\hat{P}_{w}(y = j | x)$, estimate label $y$ given input $x$  
-$T(\cdot | x) $ : nuisance transformation distribution.  
+$T(\cdot | x)$ : nuisance transformation distribution.  
 nuisance transformation : location, scale, aspect ratio, ... etc.  
 - Definition of a "good" classifier?  
-invariant to $T(\cdot | x)$,  
-i.e. $\hat{P}_{w}(y = j | x) = \hat{P}_{w}(y = j | x^{trans})$ when $x^{trans} = T(x)$, transformed $x$.  
+invariant to $$T(\cdot | x)$$,  
+i.e. $$\hat{P}_{w}(y = j | x) = \hat{P}_{w}(y = j | x^{trans})$$  
+when $x^{trans} = T(x)$, transformed $x$.  
 i.e. same label prediction for both original input $x$, transformed $T(x)$  
 - Invariance metric : eKLD (estimated KL Divergence)  
   ![img1](/images/ddop0321/eKLD.png)  
-  Equal with $\sum_{x \in P_{train}} \hat{P}_{w}( \cdot | x) \log \frac{\hat{P}_{w}( \cdot | x)}{\hat{P}_{w}( \cdot | T(x))}$  
+  Equal with $$\sum_{x \in P_{train}} \hat{P}_{w}( \cdot | x) \log \frac{\hat{P}_{w}( \cdot | x)}{\hat{P}_{w}( \cdot | T(x))}$$  
 
 - average KL Divergence, relative entrophy, statistcal distance  
 i.e. avg diff of encoding bits  
@@ -64,7 +65,7 @@ Objective : transfer invariance across classes by explicitly learning underlying
 - Algorithm
 ![img2](/images/ddop0321/geninvar.png)  
 
-```python
+```
 sample batch, either random or relative to sample sizes per class
 
 if class_size(y_i) <= threshold
