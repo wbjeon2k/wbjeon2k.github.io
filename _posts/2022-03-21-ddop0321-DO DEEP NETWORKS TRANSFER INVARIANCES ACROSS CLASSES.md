@@ -82,6 +82,8 @@ why do deep neural nets struggle with class-agnostic invariance transfer in the 
 # Thinkings
 물론 contrastive learning은 SSL 이지만, 그냥 똑같은거 아닌가?  
 $T$ 의 (orthonormal) basis? 그냥 random selection이 맞나?  
+결과를 보면 $10^3$ 넘어가면서 부터 GIT의 효능 역전됨.
+$\rightarrow$ class sample size 충분히 커지면 그냥 '잘' 정제된 이미지를 많이 보는게 낫다.  
 
 # Notable References
 
