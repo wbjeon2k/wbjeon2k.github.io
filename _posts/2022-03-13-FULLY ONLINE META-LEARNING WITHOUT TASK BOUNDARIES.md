@@ -1,8 +1,8 @@
 ---
-tags: paper ddop
+tags: ddop
 date: 2022-03-13 12:00 +0900
 title: "Daily Dose of Paper : 2022-03-13 FULLY ONLINE META-LEARNING WITHOUT TASK BOUNDARIES (FOML)"
-categories: ai paper ddop
+categories: ai
 <!--author: wbjeon2k-->
 ---
 

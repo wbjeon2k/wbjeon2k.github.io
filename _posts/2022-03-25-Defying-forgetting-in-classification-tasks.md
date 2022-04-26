@@ -1,8 +1,8 @@
 ---
-tags: paper
+tags: ddop
 date: 2022-03-25 18:00 +0900
 title: "Daily Dose of Paper : A continual learning survey: Defying forgetting in classification tasks 2022-03-25"
-categories: ai paper
+categories: ai
 <!--author: wbjeon2k-->
 ---
 

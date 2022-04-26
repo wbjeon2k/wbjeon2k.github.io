@@ -1,8 +1,8 @@
 ---
-tags: paper ddop
+tags: ddop
 date: 2022-03-21 12:00 +0900
 title: "Daily Dose of Paper : 2022-03-21 DO DEEP NETWORKS TRANSFER INVARIANCES ACROSS CLASSES?"
-categories: ai paper ddop
+categories: ai
 <!--author: wbjeon2k-->
 ---
 

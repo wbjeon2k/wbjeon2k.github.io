@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: http://wbjeon2k.github.io/sitemap.xml
