@@ -48,16 +48,16 @@ Conventional contrastive learning methods apply one or more augmentations separa
 
 Conventional contrastive learning methods acquire contrastive loss at the end of the network, based on the pair of outputs.  
 Instead, check contrastive loss for even phases before output.  
-For example, check contrastive loss for layer $1,2, \cdots l$  
+For example, check contrastive loss for layer $$1,2, \cdots l$$  
 
 3. Embed augmentation information into input.  
 
-Given $L_{contrastive}(z_a, z_b)$,  
+Given $$L_{contrastive}(z_a, z_b)$$,  
 Normal contrastive learnings:  
-$z = f(\text{feature})$  
+$$z = f(\text{feature})$$  
 Suggested method:  
-$z = f(\text{feature}, \text{augmentation embedding})$,  
-when $\text{augmentation embedding} = g(\text{color information}, \text{rotational angle}, \text{masking box location and size}, \cdots )$
+$$z = f(\text{feature}, \text{augmentation embedding})$$,  
+when $$\text{augmentation embedding} = g(\text{color information}, \text{rotational angle}, \text{masking box location and size}, \cdots )$$
 
 # Notable References
 
@@ -70,7 +70,7 @@ Stacking augmentation methods may have dependency issues.
 
 CAM is not regarded as a criterion.  
 --> Not only about the classification result, but also the feature itself should be compared in pairs.  
---> i.e. feature itself could be an input for $L_{contrastive}$  
+--> i.e. feature itself could be an input for $$L_{contrastive}$$  
 --> Relevent metric would be (grad) CAM.
 
 # Footnote

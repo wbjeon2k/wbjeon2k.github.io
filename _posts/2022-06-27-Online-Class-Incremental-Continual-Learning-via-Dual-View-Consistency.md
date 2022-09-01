@@ -43,7 +43,7 @@ Maximum gradient is consist of CE loss, mutual information and distribution loss
 1. Maximum Gradient
 
 ![pedigree](/images/ddop0627/img3.png)  
-Select a training batch, and for each images in the memory buffer, calculate gradient for both the original parameter $\theta$ and parameter (virtually) updated with trainig batch $\theta_v$
+Select a training batch, and for each images in the memory buffer, calculate gradient for both the original parameter $$\theta$$ and parameter (virtually) updated with trainig batch $$\theta_v$$
 
 2. Mutual Information Loss.
 

@@ -52,7 +52,7 @@ i.e. same label prediction for both original input $x$, transformed $T(x)$
 
 - average KL Divergence, relative entrophy, statistcal distance  
 i.e. avg diff of encoding bits  
-- $T a-priori$ unknown (당연! 알면 이걸 왜...)  
+- $T_{a-priori}$ unknown (당연! 알면 이걸 왜...)  
 따라서 rotation 같은 방법 사용, $T = {T_{rotation}, T_{erosion}, \cdots}$  
 - $T$ != data augmentation!  
 하나의 input $x$ 에 대해서, multiple randomly chosen transform methods 가능.  
