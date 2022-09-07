@@ -13,8 +13,8 @@ Another Chelsea Finn's paper incoming!
 
 ## **TLDR**
 If class sample size is below some threshold,  
-remove original $(x,y)$,  
-replace with $(T(x), y)$ when $T(x)$ is a nuisance transformation.  
+remove original $$(x,y)$$,  
+replace with $$(T(x), y)$$ when $$T(x)$$ is a nuisance transformation.  
 Nuisance transform : location, scalem, aspect ratio, ...  
 
 
@@ -37,29 +37,29 @@ learned from large (in terms of sample size) classes to small classes?
 - Claim : generative approach suggested (Generative Invariance Transfer) helps,  
 however invariance transfer is still poor, even applying balancing techniques.  
 - Set of notations:  
-input as $(x,y)$, $y \in {1, \cdots C}$, weight $w$   
-model $\hat{P}_{w}(y = j | x)$, estimate label $y$ given input $x$  
-$T(\cdot | x)$ : nuisance transformation distribution.  
+input as $$(x,y)$$, $$y \in {1, \cdots C}$$, weight $$w$$   
+model $$\hat{P}_{w}(y = j | x)$$, estimate label $$y$$ given input $$x$$  
+$$T(\cdot | x)$$ : nuisance transformation distribution.  
 nuisance transformation : location, scale, aspect ratio, ... etc.  
 - Definition of a "good" classifier?  
 invariant to $$T(\cdot | x)$$,  
 i.e. $$\hat{P}_{w}(y = j | x) = \hat{P}_{w}(y = j | x^{trans})$$  
-when $x^{trans} = T(x)$, transformed $x$.  
-i.e. same label prediction for both original input $x$, transformed $T(x)$  
+when $$x^{trans} = T(x)$$, transformed $$x$$.  
+i.e. same label prediction for both original input $$x$$, transformed $$T(x)$$  
 - Invariance metric : eKLD (estimated KL Divergence)  
   ![img1](/images/ddop0321/eKLD.png)  
   Equal with $$\sum_{x \in P_{train}} \hat{P}_{w}( \cdot | x) \log \frac{\hat{P}_{w}( \cdot | x)}{\hat{P}_{w}( \cdot | T(x))}$$  
 
 - average KL Divergence, relative entrophy, statistcal distance  
 i.e. avg diff of encoding bits  
-- $T_{a-priori}$ unknown (당연! 알면 이걸 왜...)  
-따라서 rotation 같은 방법 사용, $T = {T_{rotation}, T_{erosion}, \cdots}$  
-- $T$ != data augmentation!  
-하나의 input $x$ 에 대해서, multiple randomly chosen transform methods 가능.  
-e.g) `rotate(erosion(x))` 등 가능. $\rightarrow$ Contrastive learning과 직결?  
+- $$T_{a-priori}$$ unknown (당연! 알면 이걸 왜...)  
+따라서 rotation 같은 방법 사용, $$T = {T_{rotation}, T_{erosion}, \cdots}$$  
+- $$T$$ != data augmentation!  
+하나의 input $$x$$ 에 대해서, multiple randomly chosen transform methods 가능.  
+e.g) `rotate(erosion(x))` 등 가능. $$\rightarrow$$ Contrastive learning과 직결?  
 - Solution : Generative Invariance Transfer  
-Objective : transfer invariance across classes by explicitly learning underlying $T$  
-- learn input-conditioned generative model $T_{mock}(\cdot | x) \sim T(\cdot | x)$  
+Objective : transfer invariance across classes by explicitly learning underlying $$T$$  
+- learn input-conditioned generative model $$T_{mock}(\cdot | x) \sim T(\cdot | x)$$  
 &rarr; assume T_mock is same as orignial T  
 - based on multimodal image-to-image translation
 - Algorithm
@@ -81,9 +81,9 @@ why do deep neural nets struggle with class-agnostic invariance transfer in the 
 
 # Thinkings
 물론 contrastive learning은 SSL 이지만, 그냥 똑같은거 아닌가?  
-$T$ 의 (orthonormal) basis? 그냥 random selection이 맞나?  
-결과를 보면 $10^3$ 넘어가면서 부터 GIT의 효능 역전됨.
-$\rightarrow$ class sample size 충분히 커지면 그냥 '잘' 정제된 이미지를 많이 보는게 낫다.  
+$$T$$ 의 (orthonormal) basis? 그냥 random selection이 맞나?  
+결과를 보면 $$10^3$$ 넘어가면서 부터 GIT의 효능 역전됨.
+$$\rightarrow$$ class sample size 충분히 커지면 그냥 '잘' 정제된 이미지를 많이 보는게 낫다.  
 
 # Notable References
 
