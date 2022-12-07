@@ -1,7 +1,7 @@
 ---
 tags: misc
-date: 2022-09-26 16:00 +0900
-title: "AIGS AI Seminar : 이치훈 CJ 올리브네트웍스 CAIO"
+date: 2022-11-15 16:00 +0900
+title: "UNIST MTH Seminar : 김정은 교수님, neuro computation"
 categories: seminar
 <!--author: wbjeon2k-->
 ---
