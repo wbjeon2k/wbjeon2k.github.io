@@ -6,25 +6,25 @@ permalink: /about.html
 
 ## 전웅배, Woongbae "Brian" Jeon.
 
-[UNIST][UNIST-link] 컴퓨터공학과 4학년 재학중인 학생입니다.  
+[UNIST][UNIST-link] 인공지능대학원 석사 과정 재학중인 학생입니다.  
 
 ML/AI, Algorithm PS 등에 관심이 있습니다.  
 
 ML/AI 중에서는 **Continual Learning, Meta Learning, Contrastive Learning** 등에 관심이 있습니다.  
 
-현재 [UNIST AIGS](https://aigs.unist.ac.kr/web/index.php) 에 소속된 윤성환 교수님의 [MIIL](https://sites.google.com/view/swyoon89) 연구실에서 장기적으로 인턴십을 수행하고 있습니다.  
+현재 [UNIST AIGS](https://aigs.unist.ac.kr/web/index.php) 에 소속된 윤성환 교수님의 [MIIL](https://sites.google.com/view/swyoon89) 연구실에 있습니다.  
 
-I am a senior student at [UNIST][UNIST-link] CSE department.  
+I am a MS candidate student at [UNIST AIGS][UNIST-AIGS-link] department.  
 
 I am currently interested in ML/AI and Algorithm PS.  
 
 I am especially interested in **Continual Learning, Meta Learning, Contrastive Learning** among all ML/AI topics.  
 
-I am currently working as an intern at UNIST [MIIL](https://sites.google.com/view/swyoon89) under Prof.SungWhan Yoon.
+I am currently at UNIST [MIIL](https://sites.google.com/view/swyoon89) under Prof.SungWhan Yoon.
 
 Email: woongbae@unist.ac.kr
 
-[UNIST-link]: https://unist.ac.kr
+[UNIST-AIGS-link]: https://unist.ac.kr
 
 ### Continual Learning, Meta Learning, Contrastive Learning
 
