@@ -43,7 +43,7 @@ disclaimer : 다른 분야에서 두각을 나타내는 박재우 군이 자기 
 - Balanced softmax cross-entropy for incremental learning with and without memory (**CVIU**)[[paper](https://www.sciencedirect.com/science/article/pii/S1077314222001606)]
 - Online Continual Learning through Mutual Information Maximization (**ICML2022**)[[paper](https://proceedings.mlr.press/v162/guo22g/guo22g.pdf)]
 - Improving Task-free Continual Learning by Distributionally Robust Memory Evolution (**ICML2022**)[[paper](https://proceedings.mlr.press/v162/wang22v/wang22v.pdf)]
-- Forget-free Continual Learning with Winning Subnetworks (**ICML2022**)[[paper](https://proceedings.mlr.press/v162/kang22b/kang22b.pdf)]
+- ~~Forget-free Continual Learning with Winning Subnetworks (**ICML2022**)[[paper](https://proceedings.mlr.press/v162/kang22b/kang22b.pdf)]~~ [review](https://wbjeon2k.github.io/ai/2023/01/30/WSN.html)
 - NISPA: Neuro-Inspired Stability-Plasticity Adaptation for Continual Learning in Sparse Networks (**ICML2022**)[[paper](https://proceedings.mlr.press/v162/gurbuz22a/gurbuz22a.pdf)]
 - Continual Learning via Sequential Function-Space Variational Inference (**ICML2022**)[[paper](https://proceedings.mlr.press/v162/rudner22a/rudner22a.pdf)]
 - On Solving Class Incremental Learning in Continual Learning (**NeurIPS2022**)
