@@ -88,7 +88,7 @@ toc:
 ## => Markdown Enhancements
 ##############################
 ## Mathjax
-#mathjax: true
+mathjax: true
 #mathjax_autoNumber: true
 
 ## Mermaid
