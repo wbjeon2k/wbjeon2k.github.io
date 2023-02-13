@@ -58,7 +58,7 @@ disclaimer : 다른 분야에서 두각을 나타내는 박재우 군이 자기 
 - Lifelong Neural Predictive Coding: Learning Cumulatively Online without Forgetting (**NeurIPS2022**) [[paper](https://arxiv.org/abs/1905.10696)]
 - Few-Shot Continual Active Learning by a Robot (**NeurIPS2022**) [[paper](https://arxiv.org/abs/2210.04137)]
 - Continual learning: a feature extraction formalization, an efficient algorithm, and fundamental obstructions(**NeurIPS2022**) [[paper](https://arxiv.org/abs/2203.14383)]
-- SparCL: Sparse Continual Learning on the Edge(**NeurIPS2022**) [[paper](https://arxiv.org/abs/2209.09476)]
+- ~~SparCL: Sparse Continual Learning on the Edge(**NeurIPS2022**) [[paper](https://arxiv.org/abs/2209.09476)]~~[my_review](https://wbjeon2k.github.io/ai/2023/02/11/SparCL.html)
 - CLiMB: A Continual Learning Benchmark for Vision-and-Language Tasks (**NeurIPS2022**) [[paper](https://openreview.net/forum?id=FhqzyGoTSH)] [[code](https://github.com/GLAMOR-USC/CLiMB)]
 - Continual Learning In Environments With Polynomial Mixing Times (**NeurIPS2022**) [[paper](https://arxiv.org/abs/2112.07066)] [[code](https://github.com/sharathraparthy/polynomial-mixing-times)]
 - Exploring Example Influence in Continual Learning (**NeurIPS2022**) [[paper](https://arxiv.org/abs/2209.12241)] [[code](https://github.com/sssunqing/example_influence_cl)]
